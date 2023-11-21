@@ -12,13 +12,32 @@ import uwcse.graphics.GWindow;
 import uwcse.io.AudioPlayer;
 import uwcse.io.Sound;
 
+/**
+ * Clase encargada de llamar a todas las clases de cada escenario y reproducir
+ * audios que
+ */
 public class trailer {
-    public static void main (String [] args) throws InterruptedException, IOException{
-        GWindow video = new GWindow(1200,675);
-        Sound theme2_3_4 = new Sound("/home/mrfabian/Desktop/Facu/1erSemestre/Introduccion a la Programacion/proyectoAnimacio/sonidos/seriedad.wav");
-        Sound theme5= new Sound("/home/mrfabian/Desktop/Facu/1erSemestre/Introduccion a la Programacion/proyectoAnimacio/sonidos/pelea.wav");
-        Sound remate = new Sound("/home/mrfabian/Desktop/Facu/1erSemestre/Introduccion a la Programacion/proyectoAnimacio/sonidos/cuack.wav");
-        AudioPlayer bandaSonora= new AudioPlayer();
+    /**
+     * La Clase Principal, el main el encargado de reproducir todas las clases
+     * listos para observar la animación
+     * 
+     * @param args
+     * @throws InterruptedException En Caso de tener problemas con las animaciones
+     * @throws IOException          En casa de tener problemas con las imagenes
+     */
+    public static void main(String[] args) throws InterruptedException, IOException {
+        GWindow video = new GWindow(1200, 675);
+        Sound theme2_3_4 = new Sound(
+                "/home/mrfabian/Desktop/Facu/1erSemestre/Introduccion a la Programacion/proyectoAnimacio/sonidos/seriedad.wav");
+        Sound theme5 = new Sound(
+                "/home/mrfabian/Desktop/Facu/1erSemestre/Introduccion a la Programacion/proyectoAnimacio/sonidos/pelea.wav");
+        Sound remate = new Sound(
+                "/home/mrfabian/Desktop/Facu/1erSemestre/Introduccion a la Programacion/proyectoAnimacio/sonidos/cuack.wav");
+        AudioPlayer bandaSonora = new AudioPlayer();
+        /*
+         * Debido a decisiones creativas se decidio reproducir estas musicas y manejar
+         * los tiempos en el main para un mejor resultado
+         */
         Escenario1.Reproducir(video);
         Thread.sleep(15000);
         bandaSonora.play(theme2_3_4);
@@ -32,7 +51,6 @@ public class trailer {
         bandaSonora.play(theme5);
         Escenario5.Reproducir(video);
         bandaSonora.play(remate);
-        
 
     }
 }

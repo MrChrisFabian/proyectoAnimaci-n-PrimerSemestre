@@ -7,19 +7,10 @@ import java.awt.Color;
 
 /**
  * La clase Estrella representa una estrella en un escenario gráfico.
- * Esta clase contiene métodos para dibujar y animar la estrella, así como para moverla y cambiar su tamaño.
+ * Esta clase contiene métodos para dibujar y animar la estrella, así como para
+ * moverla y cambiar su tamaño.
  */
 public class Estrella {
-    private int positionX;
-    private int positionY;
-    private Color color;
-    private GWindow escenario1;
-    private int tamaño;
-    private Rectangle centro;
-    private Rectangle norte;
-    private Rectangle sur;
-    private Rectangle este;
-    private Rectangle oeste;
 
     /**
      * Crea una nueva instancia de la clase Estrella.
@@ -57,13 +48,15 @@ public class Estrella {
     /**
      * Realiza una animación de la estrella.
      *
-     * @param time            el tiempo total de la animación
-     * @param cantMovHorizontal la cantidad de movimiento horizontal en cada iteración
+     * @param time              el tiempo total de la animación
+     * @param cantMovHorizontal la cantidad de movimiento horizontal en cada
+     *                          iteración
      * @param cantMovVertical   la cantidad de movimiento vertical en cada iteración
-     * @param sizeParpadeo     el tamaño de parpadeo de la estrella
+     * @param sizeParpadeo      el tamaño de parpadeo de la estrella
      * @throws InterruptedException si ocurre un error durante la animación
      */
-    public void animacionEstrella(int time, int cantMovHorizontal, int cantMovVertical, int sizeParpadeo) throws InterruptedException {
+    public void animacionEstrella(int time, int cantMovHorizontal, int cantMovVertical, int sizeParpadeo)
+            throws InterruptedException {
         new Thread(() -> {
             try {
                 this.movimientoEstrella(cantMovHorizontal, cantMovVertical, time);
@@ -102,25 +95,31 @@ public class Estrella {
     public int getTamaño() {
         return tamaño;
     }
-//Realizamos el movimiento necesario para la animación haciendo uso de metodos ya anteriormente definidos.
+
+    // Realizamos el movimiento necesario para la animación haciendo uso de metodos
+    // ya anteriormente definidos.
     private void movimientoEstrella(int cantMovHorizontal, int cantMovVertical, int time) throws InterruptedException {
-        //Establecemos las iteraciones segun el tiempo en milisegundos que se nos indica
+        // Establecemos las iteraciones segun el tiempo en milisegundos que se nos
+        // indica
         for (int p = 0; p < time; p++) {
-            //Realizamos el movimiento horizontal positivo
+            // Realizamos el movimiento horizontal positivo
             for (int i = 0; i < (time / 5); i++) {
                 this.moveByEstrella(cantMovHorizontal, cantMovVertical);
                 Thread.sleep(45);
             }
-            //Realizamos el movimiento horizontal negativo
+            // Realizamos el movimiento horizontal negativo
             for (int s = 0; s < (time / 5); s++) {
                 this.moveByEstrella(-cantMovHorizontal, cantMovVertical);
                 Thread.sleep(45);
             }
         }
     }
-//Efecto de parpadeo creado cambiando el tamaño de la estrella y devolviendola a su estado original tambien es posible llevar su tamaño a 0 para un efecto mas convincente
+
+    // Efecto de parpadeo creado cambiando el tamaño de la estrella y devolviendola
+    // a su estado original tambien es posible llevar su tamaño a 0 para un efecto
+    // mas convincente
     private void parpadeo(int size, int time) throws InterruptedException {
-        //Cantidad de iteraciones segun el tiempo
+        // Cantidad de iteraciones segun el tiempo
         for (int i = 0; i < time; i++) {
             this.setTamañoEstrella(size);
             Thread.sleep(700);
@@ -128,7 +127,8 @@ public class Estrella {
             Thread.sleep(700);
         }
     }
-// Establecemos el tamaño de la estrella con sus 5 objetos que la forman
+
+    // Establecemos el tamaño de la estrella con sus 5 objetos que la forman
     private void setTamañoEstrella(int size) {
         this.setTamaño(size, centro);
         this.setTamaño(size, norte);
@@ -136,9 +136,23 @@ public class Estrella {
         this.setTamaño(size, este);
         this.setTamaño(size, oeste);
     }
-// Establecer el tamaño de un objeto de forma individual y actualizarlo en la ventana donde se dibuja 
+
+    // Establecer el tamaño de un objeto de forma individual y actualizarlo en la
+    // ventana donde se dibuja
     private void setTamaño(int size, Rectangle rectanguloGenerico) {
         rectanguloGenerico.resize(size, size);
         rectanguloGenerico.addTo(escenario1);
     }
+
+    /* Variables de instancia de la clase Estrella */
+    private int positionX;
+    private int positionY;
+    private Color color;
+    private GWindow escenario1;
+    private int tamaño;
+    private Rectangle centro;
+    private Rectangle norte;
+    private Rectangle sur;
+    private Rectangle este;
+    private Rectangle oeste;
 }

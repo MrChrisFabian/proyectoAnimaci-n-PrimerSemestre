@@ -4,9 +4,16 @@ import java.awt.Color;
 import java.io.IOException;
 import uwcse.graphics.GWindow;
 import uwcse.graphics.Rectangle;
-
+/*
+ * Clase para Generar las Piedras necesarias en la escenografia del Desierto
+ */
 public class Piedras {
+    /**
+     * Utilizamos un conjunto de figuras geometricas para dar el efecto de un fondo desertico
+     * @throws IOException En Caso de tener problemas con el elemento complejo
+     */
     public Piedras() throws IOException {
+
         roca = new Rectangle(-110, 661, 1400, 13,PiedraColor, true);
         roca2 = new Rectangle(83, 637, 383, 36,PiedraColor, true);
         roca3 = new Rectangle(120, 570, 384, 68,PiedraColor, true);
@@ -20,7 +27,10 @@ public class Piedras {
         roca11 = new Rectangle(915,7,283,123,PiedraColor,true);
         roca12 = new Rectangle(-110,575,125,90,PiedraColor,true);
     }
-
+    /**
+     * Se agrega el objeto complejo al Escenario
+     * @param ventanaGWindow Gwindow en donde agregaremos las piedras.
+     */
     public void AgregarPiedras(GWindow ventanaGWindow) {
         
         roca.addTo(ventanaGWindow);
@@ -36,7 +46,12 @@ public class Piedras {
         roca11.addTo(ventanaGWindow);
         roca12.addTo(ventanaGWindow);
     }
-
+    /**
+     * Metodo encargado de mover el objeto complejo como un todo en la dirección Derecha
+     * @param ventaGWindow Ventana en donde se realiza el desplazamiento
+     * @param cantPixeMover Cantidad de pixeles que necesitamos desplazaar en la Derecha al objeto
+     * @throws InterruptedException En Caso de Obtener un error en la animación
+     */
     public void moverPiedrasDerecha(GWindow ventaGWindow, int cantPixeMover) throws InterruptedException {
         for (int i = 0; i < cantPixeMover; i++) {
             roca.moveTo(roca.getX() + 1, roca.getY());
@@ -54,6 +69,12 @@ public class Piedras {
             Thread.sleep(50);
         }
     }
+    /**
+     * Metodo encargado de mover el objeto complejo como un todo en la dirección Inferior
+     * @param ventaGWindow Ventana en donde se realiza el desplazamiento
+     * @param cantPixeMover Cantidad de pixeles que necesitamos desplazaar hacia Abajo al objeto
+     * @throws InterruptedException En Caso de Obtener un error en la animación
+     */
     public void moverPiedrasAbajo(GWindow ventaGWindow, int cantPixeMover) throws InterruptedException {
         for (int i = 0; i < cantPixeMover; i++) {
             roca.moveTo(roca.getX() , roca.getY()+1);
@@ -71,7 +92,7 @@ public class Piedras {
             Thread.sleep(10);
         }
     }
-    
+    // Variables de Instancia de la clase piedras
     private final Rectangle roca;
     private final Rectangle roca2;
     private final Rectangle roca3;
