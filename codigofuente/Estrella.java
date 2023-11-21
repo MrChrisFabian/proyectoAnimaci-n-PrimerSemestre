@@ -22,9 +22,9 @@ public class Estrella {
      * @param escenario1 el escenario en el que se dibujará la estrella
      */
     public Estrella(int tamaño, Color color, int positionX, int positionY, GWindow escenario1) {
-        this.color = color;
-        this.positionX = positionX;
-        this.positionY = positionY;
+        // this.color = color;
+        // this.positionX = positionX;
+        // this.positionY = positionY;
         this.tamaño = tamaño;
         this.escenario1 = escenario1;
         this.centro = new Rectangle(positionX, positionY, tamaño, tamaño, color, true);
@@ -145,9 +145,9 @@ public class Estrella {
     }
 
     /* Variables de instancia de la clase Estrella */
-    private int positionX;
-    private int positionY;
-    private Color color;
+    // private int positionX;
+    // private int positionY;
+    // private Color color;
     private GWindow escenario1;
     private int tamaño;
     private Rectangle centro;
