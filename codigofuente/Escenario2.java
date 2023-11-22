@@ -22,10 +22,10 @@ public class Escenario2 {
 
         /* Creamos las variables y elementos necesarios para la animación */
         Imagenes cielo = new Imagenes(
-                "/home/mrfabian/Desktop/Facu/1erSemestre/Introduccion a la Programacion/proyectoAnimacio/imagenes/nochecielo.png",
+                "nochecielo.png",
                 0, -200);
         Imagenes volando = new Imagenes(
-                "/home/mrfabian/Desktop/Facu/1erSemestre/Introduccion a la Programacion/proyectoAnimacio/imagenes/proyectAnimacion.png",
+                "proyectAnimacion.png",
                 0, 0);
         /*
          * Creamos Los Objetos complejos, las "Estrella" ingresamos el tamaño ya que

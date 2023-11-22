@@ -26,17 +26,17 @@ public class Escenario1 {
     public static void Reproducir(GWindow ventanaGWindow) throws InterruptedException, IOException {
         Piedras desierto = new Piedras();
         Imagenes personaje1 = new Imagenes(
-                "/home/mrfabian/Desktop/Facu/1erSemestre/Introduccion a la Programacion/proyectoAnimacio/imagenes/gokubehind.png",
+                "gokubehind.png",
                 800, 30);
         Imagenes personaje2 = new Imagenes(
-                "/home/mrfabian/Desktop/Facu/1erSemestre/Introduccion a la Programacion/proyectoAnimacio/imagenes/frontvegeta.png",
+                "frontvegeta.png",
                 307, 208);
         Imagenes fondo = new Imagenes(
-                "/home/mrfabian/Desktop/Facu/1erSemestre/Introduccion a la Programacion/proyectoAnimacio/imagenes/desert.png",
+                "desert.png",
                 0, 0);
         AudioPlayer audioPlayer = new AudioPlayer();
         Sound musicaSound = new Sound(
-                "/home/mrfabian/Desktop/Facu/1erSemestre/Introduccion a la Programacion/proyectoAnimacio/sonidos/musicaescena1.wav");
+                "sonidos/musicaescena1.wav");
 
         // Agregamos en pantalla los elementos que creamos
         fondo.AgregarImagen(ventanaGWindow);

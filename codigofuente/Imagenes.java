@@ -21,7 +21,7 @@ public class Imagenes {
      */
     public Imagenes(String rutaImagen, int x, int y) {
         try {
-            image = ImageIO.read(new File(rutaImagen));
+            image = ImageIO.read(new File("imagenes/"+rutaImagen));
             imageShapo = new ImageShape(image, x, y);
         } catch (IOException e) {
         }

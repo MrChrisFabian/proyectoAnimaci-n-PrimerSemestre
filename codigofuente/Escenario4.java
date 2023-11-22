@@ -16,7 +16,7 @@ public class Escenario4 {
          * Inicializamos las variables a ser utilizadas
          */
         Imagenes vegeta = new Imagenes(
-                "/home/mrfabian/Desktop/Facu/1erSemestre/Introduccion a la Programacion/proyectoAnimacio/imagenes/vegeta.png",
+                "vegeta.png",
                 -50, 0);
         Estrella estrella1 = new Estrella(10, Color.white, 140, 426, escena4);
         Estrella estrella2 = new Estrella(5, Color.white, 228, 626, escena4);

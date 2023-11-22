@@ -27,11 +27,11 @@ public class trailer {
         public static void main(String[] args) throws InterruptedException, IOException {
                 GWindow video = new GWindow(1200, 675);
                 Sound theme2_3_4 = new Sound(
-                                "/home/mrfabian/Desktop/Facu/1erSemestre/Introduccion a la Programacion/proyectoAnimacio/sonidos/seriedad.wav");
+                                "sonidos/seriedad.wav");
                 Sound theme5 = new Sound(
-                                "/home/mrfabian/Desktop/Facu/1erSemestre/Introduccion a la Programacion/proyectoAnimacio/sonidos/pelea.wav");
+                                "sonidos/pelea.wav");
                 Sound remate = new Sound(
-                                "/home/mrfabian/Desktop/Facu/1erSemestre/Introduccion a la Programacion/proyectoAnimacio/sonidos/cuack.wav");
+                                "sonidos/cuack.wav");
                 AudioPlayer bandaSonora = new AudioPlayer();
                 /*
                  * Debido a decisiones creativas se decidio reproducir estas musicas y manejar

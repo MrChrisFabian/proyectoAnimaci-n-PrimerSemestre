@@ -14,7 +14,7 @@ public class Escenario3 {
     public static void Reproducir(GWindow escena3) {
         // Creamos los Elementos estaticos y complejos para la escena 
         Imagenes gokuImagenes = new Imagenes(
-                "/home/mrfabian/Desktop/Facu/1erSemestre/Introduccion a la Programacion/proyectoAnimacio/imagenes/gokuface.png",
+                "gokuface.png",
                 0, 0);
         Estrella estrella1 = new Estrella(10, Color.white, 143, 494, escena3);
         Estrella estrella2 = new Estrella(5, Color.white, 335, 620, escena3);
